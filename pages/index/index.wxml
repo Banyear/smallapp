@@ -1,5 +1,10 @@
 <!-- view可以当成div使用 -->
 <!-- 轮播图区域 -->
+<custom-checkbox  position="left" >
+  我已阅读并同意 用户协议
+</custom-checkbox>
+
+
 <view class="swiper">
   <swiper autoplay circular indicator-dots interval="2000" indicator-color="#fff" indicator-active-color="#f3514f">
     <swiper-item>

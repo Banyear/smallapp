@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+      numList:[1,2,3]
   },
 
   /**
@@ -47,14 +47,33 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh() {
-
+    // console.log('下拉')
+    this.setData({
+     numList:[4,5,6]
+    })
+    if(this.data.numList.length===3){
+      wx.stopPullDownRefresh()
+    }
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom() {
-
+    wx.showLoading({
+      title: '加载中',
+      mask: true
+    })
+    setTimeout(()=>{
+      const lastNum=this.data.numList[this.data.numList.length-1];
+      const newArr=[lastNum+1,lastNum+2,lastNum+3];
+  
+      this.setData({
+        numList:[...this.data.numList,...newArr]
+      })
+      wx.hideLoading()
+    },1500)
+    
   },
 
   /**

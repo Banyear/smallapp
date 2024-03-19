@@ -1,9 +1,24 @@
-/* pages/cate/cate.wxss */
-.box{
-  width: 375rpx;
-  height: 600rpx;
-  background-color: lightgreen;
+// /* pages/cate/cate.wxss */
+// .box{
+//   width: 375rpx;
+//   height: 600rpx;
+//   background-color: lightgreen;
+// }
+// text{
+//   font-size: 30rpx;
+// }
+// page{
+//   height: 1000px;
+// }
+view{
+  height: 400rpx;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
-text{
-  font-size: 30rpx;
+view:nth-child(odd){
+  background-color: lightblue;
+}
+view:nth-child(even){
+  background-color: lightcoral;
 }

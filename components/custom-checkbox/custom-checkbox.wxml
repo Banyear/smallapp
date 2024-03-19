@@ -1,0 +1,11 @@
+<!--components/custom-checkbox/custom-checkbox.wxml-->
+
+
+<view class="custom-checkbox-container">
+<view class="custom-checkbox-box {{position==='right'?'right':'left'}}">
+  <checkbox class="custom-checkbox" checked="{{ isCheck }}" bindtap="updateCheckd"/>
+  <view>
+    <slot/>
+  </view>
+</view>
+</view>
