@@ -1,5 +1,0 @@
-<!-- view 小程序提供的组件 不能使用px 不能实现自适应 rpx-->
-<!-- <view class="box">bbbb</view> -->
-
-<view wx:for="{{ numList }}" wx:key="*this">{{ item }}</view>
- 
