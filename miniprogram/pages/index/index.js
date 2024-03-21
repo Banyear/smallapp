@@ -10,7 +10,9 @@ Page({
     //人气推荐
     hotList: [],
     //猜你喜欢
-    guessList: []
+    guessList: [],
+    //是否显示骨架屏
+    loading: true
   },
   async getIndexData() {
     const res = await reqIndexData()
@@ -19,7 +21,8 @@ Page({
       categoryList: res[1].data,
       activeList: res[2].data,
       hotList: res[3].data,
-      guessList: res[4].data
+      guessList: res[4].data,
+      loading: false
     })
   },
   onLoad() {
