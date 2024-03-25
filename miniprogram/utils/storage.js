@@ -1,8 +1,8 @@
 export const setStorage = (key, data) => {
   try {
-    wx.setStorage(key, data)
+    wx.setStorageSync(key, data)
   } catch (error) {
-    console.error('存储指定${key}数据发生了异常', error)
+    console.error(`存储指定${key}数据发生了异常`, error)
   }
 }
 
@@ -58,7 +58,7 @@ export const asyncGetStorage = (key) => {
 
 export const asyncRemoveStorage = (key) => {
   return new Promise((resolve) => {
-    wx.removeStorage({
+    wx.removeStorageSync({
       key,
       complete(res) {
         resolve(res)
@@ -69,7 +69,7 @@ export const asyncRemoveStorage = (key) => {
 
 export const asyncClearStorage = () => {
   return new Promise((resolve) => {
-    wx.clearStorage({
+    wx.clearStorageSync({
       complete(res) {
         resolve(res)
       }

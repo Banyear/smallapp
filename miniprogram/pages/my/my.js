@@ -1,9 +1,11 @@
+import { ComponentWithStore } from 'mobx-miniprogram-bindings'
+import { userStore } from '../../stores/userstore'
 // pages/info/info.js
-Page({
+ComponentWithStore({
   // 页面的初始数据
   data: {
     // 初始化第二个面板数据
-      initpanel: [
+    initpanel: [
       {
         url: '/pages/order/list/list',
         title: '商品订单',
@@ -21,11 +23,17 @@ Page({
       }
     ]
   },
-
-  // 跳转到登录页面
-  toLoginPage() {
-    wx.navigateTo({
-      url: '/pages/login/login'
-    })
+  storeBindings: {
+    store: userStore,
+    fields: ['token', 'userInfo'],
+    actions: ['setToken', 'setUserInfo']
+  },
+  methods: {
+    // 跳转到登录页面
+    toLoginPage() {
+      wx.navigateTo({
+        url: '/pages/login/login'
+      })
+    }
   }
 })

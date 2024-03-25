@@ -16,12 +16,12 @@ const modal = (options = {}) => {
     const defaultOpt = {
       title: '提示',
       content: '您确定执行该操作吗?',
-      confirmColor: '$f3514f'
+      confirmColor: '#f3514f'
     }
     const opts = Object.assign({}, defaultOpt, options)
     wx.showModal({
       //将合并后的参数传入
-      opts,
+      ...opts,
       complete: ({ confirm, cancel }) => {
         confirm && resolve(true)
         cancel && resolve(false)
